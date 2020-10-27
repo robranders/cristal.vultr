@@ -1,0 +1,23 @@
+{
+  "name": "primus.vultr",
+  "version": "1.0.0",
+  "description": "Primus REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robranders/primus.vultr.git"
+  },
+  "author": "Robin Branders",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/robranders/primus.vultr/issues"
+  },
+  "homepage": "https://github.com/robranders/primus.vultr#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.4.2"
+  }
+}
