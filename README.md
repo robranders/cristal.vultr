@@ -1,2 +1,1 @@
-# primus.vultr
-Primus REST API
+# Cristal Express server

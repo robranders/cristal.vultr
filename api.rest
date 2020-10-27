@@ -1,0 +1,16 @@
+POST http://localhost:5000/sql/record
+Content-Type: application/json
+
+{
+    "record": {
+        "sensorId": 2,
+        "value": "test from API", 
+        "timestamp": "2020-10-27 09:48:00"
+    }
+}
+
+###
+
+GET http://localhost:5000/sql/lastrecords
+
+###
