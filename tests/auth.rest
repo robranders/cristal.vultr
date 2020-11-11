@@ -1,3 +1,5 @@
+### Request token
+
 POST http://localhost:5000/auth/token
 Content-Type: application/json
 
@@ -6,7 +8,7 @@ Content-Type: application/json
     "clientSecret": "123"
 }
 
-###
+### Create user
 
 POST http://localhost:5000/auth/addUpdateApiClient
 Content-Type: application/json
@@ -15,3 +17,9 @@ Content-Type: application/json
     "clientId": "abc",
     "clientSecret": "123"
 }
+
+### Test token
+GET http://localhost:5000/system/info
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6ImFiYyIsImlhdCI6MTYwNTEyMDU5MSwiZXhwIjoxNjA1MTIwNjUxfQ.2i3XLbDeAD3vKyG_nxJ6G5txifFe5n5220ra062kDqu2s00t2dWwkzm2QrcuM-cwD7LctrNfq3ahdhTzU44hbiHV96cQ-kkWlLZs9hFxduPR6BYKblSMf9yWlr6O_GDuRcrMqHCsVcmb-VO-cUCeGmmmhygbhkoFeaPn6taM_3aIj-X2uaObrzZwzUO32Bixy_0LDP4SSaOxg0OiJZRQ1wmN6_c_dCGLfXZbzZsL1FEdM_dJmsrCxTmcuiy9_tQ_93jdCHhWRMr5SpYRtdj1WNfbZiV0QqwiOZBVPRwLM7XieUuf73aH1TIWah74jnLprrT4wPhdoGn3yaOtGGSEbw
+
+###

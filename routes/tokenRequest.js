@@ -1,13 +1,12 @@
-const TOKEN_EXP_LENGTH = "60s";
-
 const {
     authApiClient,
     addUpdateApiClient
 } = require("../db/Route_tokenRequest");
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const express = require("express");
 const router = express.Router();
+
+const { getToken } = require("../oauth/generateAccessToken");
 
 router.post("/token", (req, res) => {
     const { body } = req;
@@ -24,13 +23,8 @@ router.post("/token", (req, res) => {
                 } else {
                     if (await bcrypt.compare(clientSecret, clientHash)) {
                         //Generate token
-                        const accessToken = jwt.sign(
-                            { clientId },
-                            process.env.ACCESS_TOKEN_SECRET,
-                            {
-                                expiresIn: TOKEN_EXP_LENGTH
-                            }
-                        );
+                        const accessToken = getToken(clientId);
+
                         res.json({
                             accessToken,
                             tokenType: "Bearer"

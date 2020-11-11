@@ -1,3 +1,6 @@
+# keys
+oauth/keys/
+
 # Logs
 logs
 *.log
