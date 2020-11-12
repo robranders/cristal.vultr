@@ -5,9 +5,9 @@
 
 const express = require("express");
 const router = express.Router();
-const { verifyJWT } = require("../oauth/verifyJWT");
+const { verifyAccessToken } = require("../oauth/verifyAccessToken");
 
-router.use(verifyJWT);
+router.use(verifyAccessToken);
 
 router.get("/info", (req, res) => {
     res.json({

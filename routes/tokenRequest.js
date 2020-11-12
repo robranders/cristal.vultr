@@ -7,10 +7,12 @@ const express = require("express");
 const router = express.Router();
 
 const { getToken } = require("../oauth/generateAccessToken");
+const { verifyRequestToken } = require("../oauth/verifyRequestToken");
+
+router.use(verifyRequestToken);
 
 router.post("/token", (req, res) => {
-    const { body } = req;
-    const { clientId, clientSecret } = body;
+    const { clientId, clientSecret } = req;
 
     if (clientId === undefined || clientSecret === undefined) {
         res.status(400).send("Missing Credentials");
