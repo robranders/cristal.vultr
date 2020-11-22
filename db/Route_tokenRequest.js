@@ -22,14 +22,16 @@ const addUpdateApiClient = async (clientId, clientHash, callback) => {
 };
 
 const authApiClient = async (clientIdCheck, callback) => {
-    const { rows } = await pool.query(
+    const result = await pool.query(
         `
     SELECT client_id, client_secret
     FROM api_users
-    WHERE client_id = $1`,
+    WHERE client_id = $1
+    AND active = true`,
         [clientIdCheck]
     );
     try {
+        const rows = result.rows;
         if (rows.length > 0) {
             const { client_id, client_secret } = rows[0];
             if (client_id !== null && client_id !== undefined) {

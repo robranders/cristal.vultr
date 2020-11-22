@@ -17,6 +17,7 @@ const path = require("path");
 // Routes
 const tokenRequest = require("./routes/tokenRequest");
 const systemRoute = require("./routes/systemStatistics");
+const sensorRoute = require("./routes/sensorData");
 
 // Post middleware
 var bodyParser = require("body-parser");
@@ -35,6 +36,7 @@ app.use(morgan("common", { stream: accessLogStream }));
 
 app.use("/auth", tokenRequest);
 app.use("/system", systemRoute);
+app.use("/sensors", sensorRoute);
 
 // Start server
 app.listen(PORT, () => {
